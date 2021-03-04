@@ -17,10 +17,10 @@ services.AddTransient(x => new Connection(Configuration.GetConnectionString("Def
 1. Global collection settings can be applied by using `Settings.Configure<T>` where `T` is collection model implementing `IDbModel`. This method accepts:
 
    - Connection (for connection string)
-- Expire After (for *ExpiryAfterSeconds* index)
+   - Expire After (for *ExpiryAfterSeconds* index)
    - Create Collection Options ()
 
-   Use this method with a specific collection model, make sure this method is called once for each application run.
+Use this method with a specific collection model, make sure this method is called once for each application run.
 
 
 2. If you intend to use **Dependency Tracking**, you can specify commands to <u>not</u> track by setting the `Settings.NotTrackedCommands`, by default the following commands are not not tracked:
