@@ -1,4 +1,9 @@
 # TK.MongoDB.Repository.NetCore
+[![Nuget](https://img.shields.io/nuget/v/TK.MongoDB.Repository.NetCore)](https://www.nuget.org/packages/TK.MongoDB.Repository.NetCore) 
+[![Nuget](https://img.shields.io/nuget/dt/TK.MongoDB.Repository.NetCore)](https://www.nuget.org/packages/TK.MongoDB.Repository.NetCore)
+![Azure DevOps builds](https://img.shields.io/azure-devops/build/tallalkazmi/79c589e2-20be-4ad6-9b5a-90be5ddc7916/4) 
+![Azure DevOps tests](https://img.shields.io/azure-devops/tests/tallalkazmi/79c589e2-20be-4ad6-9b5a-90be5ddc7916/4) 
+![Azure DevOps releases](https://img.shields.io/azure-devops/release/tallalkazmi/79c589e2-20be-4ad6-9b5a-90be5ddc7916/4/4)
 
 Repository pattern implementation of MongoDB collections using LINQ with optional Dependency Tracking in .NET Standard 2.0.
 
