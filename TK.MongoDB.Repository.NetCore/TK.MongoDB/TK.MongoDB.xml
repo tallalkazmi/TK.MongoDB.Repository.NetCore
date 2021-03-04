@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TK.MongoDB</name>
+    </assembly>
+    <members>
+        <member name="T:TK.MongoDB.Connection">
+            <summary>
+            Represents an open connection to a data source.
+            </summary>
+        </member>
+        <member name="M:TK.MongoDB.Connection.#ctor(System.String)">
+            <summary>
+            Represents an open connection to a data source. Instantiate connection.
+            </summary>
+            <param name="connectionString">Connection string</param>
+        </member>
+        <member name="M:TK.MongoDB.Connection.GetConnectionString">
+            <summary>
+            Gets data source's connection string.
+            </summary>
+            <returns>Connection string</returns>
+        </member>
+        <member name="T:TK.MongoDB.Data.IRepository`1">
+            <summary>
+            Data Repository
+            </summary>
+            <typeparam name="T">Type of BaseModel</typeparam>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.FindAsync(MongoDB.Bson.ObjectId)">
+            <summary>
+            Finds document by Id.
+            </summary>
+            <param name="id">Key</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Find(MongoDB.Bson.ObjectId)">
+            <summary>
+            Finds document by Id.
+            </summary>
+            <param name="id">Key</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Find single document by condition specified.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Find(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Find single document by condition specified.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.GetAsync(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets document by condition specified or gets all documents if condition is not passed. Paged records.
+            </summary>
+            <param name="currentPage">Page number</param>
+            <param name="pageSize">Page size</param>
+            <param name="condition">Lamda expression</param>
+            <returns>Tuple of records and total number of records</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Get(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets document by condition specified or gets all documents if condition is not passed. Paged records.
+            </summary>
+            <param name="currentPage">Page number</param>
+            <param name="pageSize">Page size</param>
+            <param name="condition">Lamda expression</param>
+            <returns>Tuple of records and total number of records</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.GetAsync(System.Int32,System.Int32,MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.SortDefinition{`0})">
+            <summary>
+            Gets document by filter specified. Paged records.
+            </summary>
+            <param name="currentPage">Page number</param>
+            <param name="pageSize">Page size</param>
+            <param name="filter">Filter definition</param>
+            <param name="sort">Sort definition</param>
+            <returns>Tuple of records and total number of records</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Get(System.Int32,System.Int32,MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.SortDefinition{`0})">
+            <summary>
+            Gets document by filter specified. Paged records.
+            </summary>
+            <param name="currentPage">Page number</param>
+            <param name="pageSize">Page size</param>
+            <param name="filter">Filter definition</param>
+            <param name="sort">Sort definition</param>
+            <returns>Tuple of records and total number of records</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets document by condition specified or gets all documents if condition is not passed. Nonpaged records.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns>Matching documents</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets document by condition specified or gets all documents if condition is not passed. Nonpaged records.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns>Matching documents</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.GetInAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets document with In filter.
+            </summary>
+            <typeparam name="TField">Field type to search in</typeparam>
+            <param name="field">Field name to search in</param>
+            <param name="values">Values to search in</param>
+            <returns>Matching documents</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.GetIn``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets document with In filter.
+            </summary>
+            <typeparam name="TField">Field type to search in</typeparam>
+            <param name="field">Field name to search in</param>
+            <param name="values">Values to search in</param>
+            <returns>Matching documents</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.InsertAsync(`0)">
+            <summary>
+            Inserts single record.
+            </summary>
+            <param name="instance">Document</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Insert(`0)">
+            <summary>
+            Inserts single record.
+            </summary>
+            <param name="instance">Document</param>
+            <returns>Document</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Bulk inserts all records
+            </summary>
+            <param name="instances">Documents</param>
+            <returns>BulkWriteResult</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.BulkInsert(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Bulk inserts all records
+            </summary>
+            <param name="instances">Documents</param>
+            <returns>BulkWriteResult</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.UpdateAsync(`0)">
+            <summary>
+            Updates single record based on Id.
+            </summary>
+            <param name="instance">Document</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Update(`0)">
+            <summary>
+            Updates single record based on Id.
+            </summary>
+            <param name="instance">Document</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.DeleteAsync(MongoDB.Bson.ObjectId,System.Boolean)">
+            <summary>
+            Deletes record based on Id hard or soft based on logical value.
+            </summary>
+            <param name="id">Key</param>
+            <param name="logical">Soft delete</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Delete(MongoDB.Bson.ObjectId,System.Boolean)">
+            <summary>
+            Deletes record based on Id hard or soft based on logical value.
+            </summary>
+            <param name="id">Key</param>
+            <param name="logical">Soft delete</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Counts documents based on condition specifed or counts all documents if condition is not passed.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Counts documents based on condition specifed or counts all documents if condition is not passed.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.ExistsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Checks if the document exists based on the condition specified.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Checks if the document exists based on the condition specified.
+            </summary>
+            <param name="condition">Lamda expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.IsCollectionCappedAsync">
+            <summary>
+            Check if the collection is capped
+            </summary>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.IsCollectionCapped">
+            <summary>
+            Check if the collection is capped
+            </summary>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.DropCollectionAsync">
+            <summary>
+            Drops the collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.Data.IRepository`1.DropCollection">
+            <summary>
+            Drops the collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TK.MongoDB.DbContext.#ctor(TK.MongoDB.Connection)">
+            <summary>
+            Creates an instance of IMongoDatabase from connection string in <i>Settings</i> class
+            </summary>
+        </member>
+        <member name="M:TK.MongoDB.DbContext.#ctor(TK.MongoDB.Connection,TK.MongoDB.Interfaces.IDependencyTracker)">
+            <summary>
+            Creates an instance of IMongoDatabase from connection string in <i>Settings</i> class
+            </summary>
+            <param name="connection">Connection to data source</param>
+            <param name="dependencyTracker">Inject dependency tracking implementation</param>
+        </member>
+        <member name="P:TK.MongoDB.DbContext.Database">
+            <summary>
+            Represents a database of type IMongoDatabase in MongoDB
+            </summary>
+        </member>
+        <member name="T:TK.MongoDB.Interfaces.IDependencyTracker">
+            <summary>
+            Dependency Tracking interface
+            </summary>
+        </member>
+        <member name="M:TK.MongoDB.Interfaces.IDependencyTracker.Dependency(System.String,System.String,System.Boolean,System.TimeSpan)">
+            <summary>
+            Tracks a dependency
+            </summary>
+            <param name="name">Command name</param>
+            <param name="description">Description e.g. query</param>
+            <param name="success">Result</param>
+            <param name="duration">Duration</param>
+        </member>
+        <member name="T:TK.MongoDB.Models.IDbModel">
+            <summary>
+            Database base model interface. 
+            </summary>
+        </member>
+        <member name="P:TK.MongoDB.Models.IDbModel.Id">
+            <summary>
+            Primary Key. Generates new <c>ObjectId</c> on insert.
+            </summary>
+        </member>
+        <member name="P:TK.MongoDB.Models.IDbModel.Deleted">
+            <summary>
+            Soft delete. Defaults to <c>False</c> on insert.
+            </summary>
+        </member>
+        <member name="P:TK.MongoDB.Models.IDbModel.CreationDate">
+            <summary>
+            Record created on date. Automatically sets <c>DateTime.UtcNow</c> on insert.
+            </summary>
+        </member>
+        <member name="P:TK.MongoDB.Models.IDbModel.UpdationDate">
+            <summary>
+            Record updated on date. Defaults to <c>null</c> and automatically sets <c>DateTime.UtcNow</c> on update.
+            </summary>
+        </member>
+        <member name="T:TK.MongoDB.Settings">
+            <summary>
+            Database <i>ConnectionString</i>, <i>expireAfterSeconds</i> index, and dependency tracking settings
+            </summary>
+        </member>
+        <member name="P:TK.MongoDB.Settings.NotTrackedCommands">
+            <summary>
+            Commands to NOT track while Dependency Tracking is active.
+            </summary>
+        </member>
+        <member name="M:TK.MongoDB.Settings.Configure``1(TK.MongoDB.Connection,System.Nullable{System.Int32},MongoDB.Driver.CreateCollectionOptions)">
+            <summary>
+            Configure document expiry index.
+            </summary>
+            <typeparam name="T">Collection model</typeparam>
+            <param name="connection">Connection</param>
+            <param name="expireAfter">Documents expire after seconds</param>
+            <param name="options">Create Collection Options</param>
+        </member>
+    </members>
+</doc>

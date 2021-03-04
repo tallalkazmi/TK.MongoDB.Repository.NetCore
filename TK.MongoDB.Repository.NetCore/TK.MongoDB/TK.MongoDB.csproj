@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Tallal Kazmi</Authors>
+    <Company />
+    <Copyright>2021</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>TK.MongoDB.Repository.NetCore</PackageId>
+    <Product>TK.MongoDB.Repository.NetCore</Product>
+    <PackageProjectUrl>https://github.com/tallalkazmi/TK.MongoDB.Repository.NetCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tallalkazmi/TK.MongoDB.Repository.NetCore</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>mongodb repository linq .netcore .netstandard</PackageTags>
+    <Description>Repository pattern implementation of MongoDB collections using LINQ with optional Dependency Tracking in .NET Standard 2.0.</Description>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Version>1.0.0-rc1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Sourcecode\Repos\TK.MongoDB.Repository.NetStandard\TK.MongoDB\TK.MongoDB.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.6" />
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
