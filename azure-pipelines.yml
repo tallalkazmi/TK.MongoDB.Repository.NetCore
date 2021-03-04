@@ -22,13 +22,13 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    projects: '**/TK.MongoDB.csproj'
     arguments: '--configuration $(buildConfiguration) --no-restore'
   displayName: 'Build Project'
 
 - task: file-creator@6
   inputs:
-    filepath: 'TK.MongoDB.Tests/appsettings.json'
+    filepath: '**/TK.MongoDB.Tests/appsettings.json'
     filecontent: |
       {
         "ConnectionStrings": {
