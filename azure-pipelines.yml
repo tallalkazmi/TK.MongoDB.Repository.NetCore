@@ -4,7 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- main
+  batch: true
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: ubuntu-latest
@@ -28,13 +31,14 @@ steps:
 
 - task: file-creator@6
   inputs:
-    filepath: '**/TK.MongoDB.Tests/appsettings.json'
+    filepath: '$(workingDirectory)/TK.MongoDB.Tests/appsettings.json'
     filecontent: |
       {
         "ConnectionStrings": {
           "DefaultConnection": "mongodb://appuser:admin#123@95.138.142.17:5064/MongoDB_Repo_Test?authSource=admin&connect=direct"
         }
       }
+  displayName: 'Add appsettings.json'
 
 - task: DotNetCoreCLI@2
   inputs:
