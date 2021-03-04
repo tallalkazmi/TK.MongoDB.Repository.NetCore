@@ -31,7 +31,7 @@ steps:
 
 - task: file-creator@6
   inputs:
-    filepath: '$(workingDirectory)/TK.MongoDB.Tests/appsettings.json'
+    filepath: 'TK.MongoDB.Repository.NetCore/TK.MongoDB.Tests/appsettings.json'
     filecontent: |
       {
         "ConnectionStrings": {
